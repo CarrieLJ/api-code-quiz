@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+    background-color: darkgoldenrod;
+}
+
+@media screen and (max-width: 500px) {
+    .body {
+        width: 50px;
+    }
+    
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 5px;
+    margin: 5px;
+}
+
+.h1 {
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; */
+    font-size: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px;
+    margin: 50px;
+}
