@@ -1,16 +1,20 @@
 //need to create quiz in either css or html...
-var quizBtn = document.querySelector(".btnStartQuiz");
+var quizBtn = document.querySelector("#btnStartQuiz");
 var win = document.querySelector(".win");
 var lose = document.querySelector(".lose");
 var timerEl = document.querySelector(".timer-count");
-
-quizBtn.addEventListener("click", startQuiz);
-
+var score = document.querySelector("#score");
 //add other variables??
 
 //add button to start quiz
+quizBtn.addEventListener("click", function(){
+  function startQuiz(){
 
-//add mutiple choice
+    quizBtn.disabled = true;
+  };
+});
+
+//add mutiple choice questions
 
 // The init function is called when the page loads 
 function init() {
@@ -19,16 +23,6 @@ function init() {
   }
   
   
-// /The startQuiz function is called when the start button is clicked
-// function startQuiz({
-
-//   // isWin = false;
-//   // timerCount = 10;
-//   // // Prevents start button from being clicked when round is in progress
-//   // startButton.disabled = true;
-//   // renderBlanks()
-//   // startTimer()
-// });
 
 
 
