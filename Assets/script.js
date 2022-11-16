@@ -6,37 +6,114 @@ var timerEl = document.querySelector(".timer-count");
 var score = document.querySelector("#score");
 var quizBtn = document.querySelector("#startBtn");
 
+var q1MultiChoice = 'What is this an example of: "X", "Y", "X" ?';
+var q2TrueFalse = 'Javascript is case sensitive?';
+var q3TrueFalse = 'Javascript is easy?';
+
+
+//add button to start quiz
+quizBtn.addEventListener("click", function(event){
+  event.preventDefault(); 
+  startQuiz();
+  quizBtn.disabled = true;
+});
+
+function startQuiz() {
+  var timeLeft = 15;
+
+  var timeInterval = setInterval(function () {
+    if (timeLeft > 1) {
+      timerEl.textContent = timeLeft + ' time remaining';
+      timeLeft--;
+    } else {
+      timerEl.textContent = '';
+      clearInterval(timeInterval);
+      displayMessage();
+    }
+  }, 1000);
+
+  var questions = [{
+    id: 0,
+    q: 'What is this an example of: "X", "Y", "X" ?',
+    a: [{ text: "Numbers", isCorrect: false },
+        { text: "Array", isCorrect: True },
+        { text: "Function", isCorrect: False }
+      ]
+  }]
+};
+
+
+//   q1MultiChoice2.addEventListener("click", function(){ 
+//     if (q1MultiChoice2){
+//       alert("Great job!");
+//     }else {
+//       alert("NOPE!");
+//     }
+//   });
+  
+//   q2TrueFalse.addEventListener("click", function(){ 
+//     if (True){
+//       alert("Great job!");
+//     }else {
+//       alert("NOPE!");
+//     }
+//   });
+  
+//   q3TrueFalse.addEventListener("click", function(){ 
+//     if (False){
+//       alert("Great job!");
+//     }else {
+//       alert("NOPE!");
+//     }
+//   });
+// }
+
 //need this for scoring?
 // function renderLastRegistered() {
 //   var initials = localStorage.getItem("initials");
 //   var score = localStorage.getItem("score");
 // };
 
-//add button to start quiz
-quizBtn.addEventListener("click", function(event){
-  event.preventDefault(); 
-  // startQuiz();
-  quizBtn.disabled = true;
-});
+// function displayMessage() {
+//   var wordCount = 0;
 
-//variables for questions:
-// var question1Array = ("Numbers", "Array", "Function"[1])
+//   // Uses the `setInterval()` method to call a function to be executed every 1000 milliseconds
+//   var msgInterval = setInterval(function () {
+//     // If there are no more words left in the message
+//     if (words[wordCount] === undefined) {
+//       // Use `clearInterval()` to stop the timer
+//       clearInterval(msgInterval);
+//     } else {
+//       // Display one word of the message
+//       mainEl.textContent = words[wordCount];
+//       wordCount++;
+//     }
+//   }, 1000);
+// }
 
-q1MultiChoice2.addEventListener("click", function(){ 
-  if (q1MultiChoice2){
-    alert("Great job!");
-  }else {
-    alert("NOPE!");
-  }
-});
+// q1MultiChoice2.addEventListener("click", function(){ 
+//   if (q1MultiChoice2){
+//     alert("Great job!");
+//   }else {
+//     alert("NOPE!");
+//   }
+// });
 
-q2TrueFalse.addEventListener("click", function(){ 
-  if (True){
-    alert("Great job!");
-  }else {
-    alert("NOPE!");
-  }
-});
+// q2TrueFalse.addEventListener("click", function(){ 
+//   if (True){
+//     alert("Great job!");
+//   }else {
+//     alert("NOPE!");
+//   }
+// });
+
+// q3TrueFalse.addEventListener("click", function(){ 
+//   if (False){
+//     alert("Great job!");
+//   }else {
+//     alert("NOPE!");
+//   }
+// });
   
   // Select first question
   // Populate possible answers
