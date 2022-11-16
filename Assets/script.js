@@ -33,17 +33,59 @@ function startQuiz() {
       clearInterval(timeInterval);
       // displayMessage();
     }
-  }, 1000);
 
-  var questions = [{
-    id: 0,
-    q: 'What is this an example of: "X", "Y", "X" ?',
-    a: [{ text: "Numbers", isCorrect: false },
-        { text: "Array", isCorrect: true },
-        { text: "Function", isCorrect: false }
-      ]
-  }]
+    document.getElementById("q1").innerHTML = "What is this an example of: 'X', 'Y', 'X'?";
+      document.getElementById("q1MultiChoice1").innerHTML = "Numbers";
+        if ("Numbers"){
+          timeLeft--;
+        }
+      document.getElementById("q1MultiChoice2").innerHTML = "Array";
+      if ("Array"){
+      }
+      document.getElementById("q1MultiChoice3").innerHTML = "Function";
+        if ("Function"){
+          timeLeft--;
+        }
+
+    document.getElementById("q2").innerHTML = "Javascript is case sensitive?";
+      document.getElementById("q2False").innerHTML = "False";
+        if ("False"){
+          timeLeft--;
+        }
+      document.getElementById("q2True").innerHTML = "True";
+        if ("True"){
+        }
+
+    document.getElementById("q3").innerHTML = "Javascript is easy?";
+      document.getElementById("q3False").innerHTML = "False";
+        if ("False"){
+          timeLeft--;
+        }
+      document.getElementById("q3True").innerHTML = "True";
+        if ("True"){
+        }
+      
+
+
+      q1MultiChoice1.addEventListener("click", function(){ 
+      });
+
+  
+
+  }, 1000);
 };
+
+
+
+//   var questions = [{
+//     id: 0,
+//     q: 'What is this an example of: "X", "Y", "X" ?',
+//     a: [{ text: "Numbers", isCorrect: false },
+//         { text: "Array", isCorrect: true },
+//         { text: "Function", isCorrect: false }
+//       ]
+//   }]
+// };
 
 // //use this at the end to save initials and score:
 // localStorage.setItem("initials", initials);
