@@ -5,10 +5,13 @@ var lose = document.querySelector(".lose");
 var timerEl = document.querySelector(".timer-count");
 var score = document.querySelector("#score");
 var quizBtn = document.querySelector("#startBtn");
+var initials = "";
 
 var q1MultiChoice = 'What is this an example of: "X", "Y", "X" ?';
 var q2TrueFalse = 'Javascript is case sensitive?';
 var q3TrueFalse = 'Javascript is easy?';
+
+// var initialsScores = [];
 
 
 //add button to start quiz
@@ -28,7 +31,7 @@ function startQuiz() {
     } else {
       timerEl.textContent = '';
       clearInterval(timeInterval);
-      displayMessage();
+      // displayMessage();
     }
   }, 1000);
 
@@ -36,11 +39,16 @@ function startQuiz() {
     id: 0,
     q: 'What is this an example of: "X", "Y", "X" ?',
     a: [{ text: "Numbers", isCorrect: false },
-        { text: "Array", isCorrect: True },
-        { text: "Function", isCorrect: False }
+        { text: "Array", isCorrect: true },
+        { text: "Function", isCorrect: false }
       ]
   }]
 };
+
+// //use this at the end to save initials and score:
+// localStorage.setItem("initials", initials);
+// localStorage.setItem("score", score);
+// renderLastScore();
 
 
 //   q1MultiChoice2.addEventListener("click", function(){ 
@@ -142,10 +150,7 @@ function startQuiz() {
 
 
 
-//create questions for quiz
 
-//use this at the end to save initials and score:
-// localStorage.setItem("initials", initials);
-// localStorage.setItem("score", score);
-// renderLastRegistered();
+
+
 
