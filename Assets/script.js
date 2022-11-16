@@ -5,7 +5,6 @@ var lose = document.querySelector(".lose");
 var timerEl = document.querySelector(".timer-count");
 var score = document.querySelector("#score");
 var quizBtn = document.querySelector("#startBtn");
-//add other variables??
 
 //need this for scoring?
 // function renderLastRegistered() {
@@ -17,15 +16,23 @@ var quizBtn = document.querySelector("#startBtn");
 quizBtn.addEventListener("click", function(event){
   event.preventDefault(); 
   startQuiz();
+  quizBtn.disabled = true;
 
   // if (question1 === True){
   //   //add something here to add on to score
   // }
 });
 
-function startQuiz(){
-  quizBtn.disabled = true;
+//variables for questions:
+var question1Array = ["Numbers", "Array", "Function"]
 
+function startQuiz ('What is this an example of: "X", "Y", "X"?'); { 
+  if (question1Array === "Array"){
+    alert("Great job!");
+  }else {
+    alert("NOPE!");
+  }
+  
   // Select first question
   // Populate possible answers
   // Wait/listen for user choice

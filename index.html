@@ -2,26 +2,27 @@
 <html lang="en">
 
     <head>
-        <title>Javascript Quiz</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" type="text/css" href="./Assets/style.css">
-        <h1>Test out how much you know about javascript!</h1>
+        <title>Javascript Quiz</title>
+        <link rel="stylesheet" href="./Assets/style.css">
     </head>
 
     <body>
-        <section>
-            <button id="startBtn">Start Quiz</button>
+        <div class="background">
             <div class="container">
-                <h4>Current Score: <span id="score">0</span></h4>
-                <button type="button" id="submit">Submit</button>
-                <div id="question1" Question 1="Is javascript case sensitive?"></div>
-                <div id="question2" Question 2="?"></div>
+                <div class="quiz-questions">
+                    <h1>Test out how much you know about javascript!</h1>
+                    <button id="startBtn">Start Quiz</button>
+                    <p id="questions">
+                        text="What is this an example of: "X", "Y", "X"?"
+                    </p>
+                    <button type="button" id="submitBtn">Submit</button>
+                    <h4>Current Score: <span id="score">0</span></h4>
+                </div>
             </div>
+        </div>   
             
-            
-        </section>
-        s<script src="./Assets/script.js"></script>
+        <script src="./Assets/script.js"></script>
     </body>
-    
 </html>
