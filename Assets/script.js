@@ -38,7 +38,9 @@ function startQuiz(){
   // LOOP AGAIN
 
   // WHEN DONE
-    // Other things
+    // calculate score
+    // save initials
+    // save score
 };
 
 //add mutiple choice questions
