@@ -15,23 +15,28 @@ var quizBtn = document.querySelector("#startBtn");
 //add button to start quiz
 quizBtn.addEventListener("click", function(event){
   event.preventDefault(); 
-  startQuiz();
+  // startQuiz();
   quizBtn.disabled = true;
-
-  // if (question1 === True){
-  //   //add something here to add on to score
-  // }
 });
 
 //variables for questions:
-var question1Array = ["Numbers", "Array", "Function"]
+// var question1Array = ("Numbers", "Array", "Function"[1])
 
-function startQuiz ('What is this an example of: "X", "Y", "X"?'); { 
-  if (question1Array === "Array"){
+q1MultiChoice2.addEventListener("click", function(){ 
+  if (q1MultiChoice2){
     alert("Great job!");
   }else {
     alert("NOPE!");
   }
+});
+
+q2TrueFalse.addEventListener("click", function(){ 
+  if (True){
+    alert("Great job!");
+  }else {
+    alert("NOPE!");
+  }
+});
   
   // Select first question
   // Populate possible answers
@@ -48,15 +53,15 @@ function startQuiz ('What is this an example of: "X", "Y", "X"?'); {
     // calculate score
     // save initials
     // save score
-};
+
 
 //add mutiple choice questions
 
 // The init function is called when the page loads 
-function init() {
-    getWins();
-    getlosses();
-  }
+// function init() {
+//     getWins();
+//     getlosses();
+//   }
 
 
 
@@ -66,16 +71,4 @@ function init() {
 // localStorage.setItem("initials", initials);
 // localStorage.setItem("score", score);
 // renderLastRegistered();
-
-
-  
-
-
-
-
-
-
-
-
-
 
