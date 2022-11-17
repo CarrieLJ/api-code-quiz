@@ -1,7 +1,6 @@
-//need to create quiz in either css or html...
 var submit = document.querySelector("#submit");
-var win = document.querySelector(".win");
-var lose = document.querySelector(".lose");
+// var win = document.querySelector(".win");
+// var lose = document.querySelector(".lose");
 var timerEl = document.querySelector(".timer-count");
 var score = document.querySelector("#score");
 var quizBtn = document.querySelector("#startBtn");
@@ -22,6 +21,7 @@ quizBtn.addEventListener("click", function(event){
   quizBtn.disabled = true;
 });
 
+//add timer
 function startQuiz() {
   var timeLeft = 10;
 
@@ -35,24 +35,50 @@ function startQuiz() {
       // displayMessage();
     }
 
-    // need this 1st question to pop up: id q1MultiChoice
-    // function q1MultiChoice(event){
-    //   for(var i = 0; i < arguments.length; i++)
-      document.getElementById("q1").innerHTML = "What is this an example of: 'X', 'Y', 'X'?";
+  function populateQuestions (){
 
-      document.getElementById("q1MultiChoice1").innerHTML = "Numbers";
-        if ("Numbers"){
+  };
+
+
+
+
+
+
+
+
+// need 1st question to pop up: id q1MultiChoice AND list possible answers
+  function question1 (q1AnswerA, q1AnswerB, q1AnswerC){
+    q1MultiChoice.textContent = "What is this an example of: 'X', 'Y', 'X'?";
+    q1AnswerA.textContent = "Numbers";
+    q1AnswerB.textContent = "Array";
+    q1AnswerC.textContent = "Function";
+
+    if (score === 1){
+      intro.textContent = "Correct, Yay!";
+    } else {
+      intro.textContent = "Nope!";
+    }
+
+
+  }
+//       document.getElementById("q1").innerHTML = "What is this an example of: 'X', 'Y', 'X'?";
+// //listen for user choice
+//       document.getElementById("q1MultiChoice1").innerHTML = "Numbers";
+//         if ("Numbers"){
+//           // timeLeft--;
+//         }
+//       document.getElementById("q1MultiChoice2").innerHTML = "Array";
+//       if ("Array"){
+//       }
+//       document.getElementById("q1MultiChoice3").innerHTML = "Function";
+//         if ("Function"){
           // timeLeft--;
-        }
-      document.getElementById("q1MultiChoice2").innerHTML = "Array";
-      if ("Array"){
-      }
-      document.getElementById("q1MultiChoice3").innerHTML = "Function";
-        if ("Function"){
-          // timeLeft--;
-        }
+//yay if correct; oh no if incorrect
+//if incorrect subtract time from timer
+//loop again for next questions
+        
   
-
+//2nd question to pop up and list possible answers
     document.getElementById("q2").innerHTML = "Javascript is case sensitive?";
       document.getElementById("q2False").innerHTML = "False";
         if ("False"){
@@ -60,10 +86,12 @@ function startQuiz() {
         }
       document.getElementById("q2True").innerHTML = "True";
         if ("True"){
+//yay if correct; oh no if incorrect
+//if incorrect subtract time from timer
         }
 
 
- 
+ //3rd question to pop up and list possible anwsers
     document.getElementById("q3").innerHTML = "Javascript is easy?";
       document.getElementById("q3False").innerHTML = "False";
         if ("False"){
@@ -71,6 +99,8 @@ function startQuiz() {
         }
       document.getElementById("q3True").innerHTML = "True";
         if ("True"){
+//yay if correct; oh no if incorrect
+//if incorrect subtract time from timer
         }
       
 
@@ -78,10 +108,17 @@ function startQuiz() {
       q1MultiChoice1.addEventListener("click", function(){ 
       });
     
-  
+  // WHEN DONE
+    // calculate score
+    // alert("Your score is " + score + "/" + quizQuestions.length);
+    // save initials
+    // save score  
     
   }, 1000);
 };
+
+
+
 
 
 
@@ -135,19 +172,10 @@ function startQuiz() {
 // function displayMessage() {
 //   var wordCount = 0;
 
-//   // Uses the `setInterval()` method to call a function to be executed every 1000 milliseconds
-//   var msgInterval = setInterval(function () {
-//     // If there are no more words left in the message
-//     if (words[wordCount] === undefined) {
-//       // Use `clearInterval()` to stop the timer
-//       clearInterval(msgInterval);
-//     } else {
-//       // Display one word of the message
-//       mainEl.textContent = words[wordCount];
-//       wordCount++;
-//     }
-//   }, 1000);
-// }
+
+
+
+
 
 // q1MultiChoice2.addEventListener("click", function(){ 
 //   if (q1MultiChoice2){
@@ -172,35 +200,4 @@ function startQuiz() {
 //     alert("NOPE!");
 //   }
 // });
-  
-  // Select first question
-  // Populate possible answers
-  // Wait/listen for user choice
-  // Was it correct?
-  // if yes
-    // display YAY or make a sound or something good
-  // if no
-    // display BOO or make a sound or something bad
-    // ALSO subtract time from the timer
-  // LOOP AGAIN
-
-  // WHEN DONE
-    // calculate score
-    // save initials
-    // save score
-
-
-//add mutiple choice questions
-
-// The init function is called when the page loads 
-// function init() {
-//     getWins();
-//     getlosses();
-//   }
-
-
-
-
-
-
 
