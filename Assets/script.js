@@ -6,17 +6,35 @@ var score = document.querySelector("#score");
 var quizBtn = document.querySelector("#startBtn");
 var initials = "";
 var q1MultiChoice1 = document.querySelector("#q1MultiChoice1");
+var questionIndex = 0;
+var questionBox = document.querySelector("#questionbox");
 
-var q1MultiChoice = 'What is this an example of: "X", "Y", "X" ?';
-var q2TrueFalse = 'Javascript is case sensitive?';
-var q3TrueFalse = 'Javascript is easy?';
+// var q1MultiChoice = 'What is this an example of: "X", "Y", "X" ?';
+// var q2TrueFalse = 'Javascript is case sensitive?';
+// var q3TrueFalse = 'Javascript is easy?';
+
+var questions = [
+  {
+    question: 'What is this an example of: ["X", "Y", "X"] ?',
+
+    //properties of the question
+    choices: ["Number", "Array", "Function"],
+    correctAnswer: "Array",
+  },
+
+  {
+    question: "Is Javascript easy?",
+    choices: ["True", "False"],
+    correctAnswer: "False",
+  },
+];
+console.log(questions);
 
 // var initialsScores = [];
 
-
 //add button to start quiz
-quizBtn.addEventListener("click", function(event){
-  event.preventDefault(); 
+quizBtn.addEventListener("click", function (event) {
+  event.preventDefault();
   startQuiz();
   quizBtn.disabled = true;
 });
@@ -27,40 +45,57 @@ function startQuiz() {
 
   var timeInterval = setInterval(function () {
     if (timeLeft > 1) {
-      timerEl.textContent = timeLeft + ' time remaining';
+      timerEl.textContent = timeLeft + " time remaining";
       timeLeft--;
     } else {
-      timerEl.textContent = '';
+      timerEl.textContent = "";
       clearInterval(timeInterval);
-      // displayMessage();
+      //       // displayMessage();
     }
+    console.log(timeLeft);
+  },1000);
+  populateQuestion();
+}
 
-  function populateQuestions (){
-
+function populateQuestion (){
+  var question = document.createElement("h2");
+  question.textContent=questions[questionIndex].question;
+  questionBox.append(question);
+  document.createElement("button");
+  var currentQuestion = questions[questionIndex];
+  var choices = currentQuestion.choices;
+  for (var i = 0; i < choices.length; i++){
+    var choice = choices[i];
+    var button = document.createElement("button");
+    button.textContent=choice;
+    questionBox.append(button);
+    console.log(choice);
+    button.addEventListener("click", function(){
+      choice===questions.correctAnswer; 
+      // populateQuestion();
+      // console.log(correctAnswer);
+    })
   };
+  // document.createElement("button");
+  console.log(choices);
+}
 
-
-
-
-
-
-
+// }
 
 // need 1st question to pop up: id q1MultiChoice AND list possible answers
-  function question1 (q1AnswerA, q1AnswerB, q1AnswerC){
-    q1MultiChoice.textContent = "What is this an example of: 'X', 'Y', 'X'?";
-    q1AnswerA.textContent = "Numbers";
-    q1AnswerB.textContent = "Array";
-    q1AnswerC.textContent = "Function";
+// function question1 (q1AnswerA, q1AnswerB, q1AnswerC){
+//   q1MultiChoice.textContent = "What is this an example of: 'X', 'Y', 'X'?";
+//   q1AnswerA.textContent = "Numbers";
+//   q1AnswerB.textContent = "Array";
+//   q1AnswerC.textContent = "Function";
 
-    if (score === 1){
-      intro.textContent = "Correct, Yay!";
-    } else {
-      intro.textContent = "Nope!";
-    }
+//   if (score === 1){
+//     intro.textContent = "Correct, Yay!";
+//   } else {
+//     intro.textContent = "Nope!";
+//   }
 
-
-  }
+// }
 //       document.getElementById("q1").innerHTML = "What is this an example of: 'X', 'Y', 'X'?";
 // //listen for user choice
 //       document.getElementById("q1MultiChoice1").innerHTML = "Numbers";
@@ -72,55 +107,46 @@ function startQuiz() {
 //       }
 //       document.getElementById("q1MultiChoice3").innerHTML = "Function";
 //         if ("Function"){
-          // timeLeft--;
+// timeLeft--;
 //yay if correct; oh no if incorrect
 //if incorrect subtract time from timer
 //loop again for next questions
-        
-  
-//2nd question to pop up and list possible answers
-    document.getElementById("q2").innerHTML = "Javascript is case sensitive?";
-      document.getElementById("q2False").innerHTML = "False";
-        if ("False"){
-          // timeLeft--;
-        }
-      document.getElementById("q2True").innerHTML = "True";
-        if ("True"){
-//yay if correct; oh no if incorrect
-//if incorrect subtract time from timer
-        }
 
+// //2nd question to pop up and list possible answers
+//     document.getElementById("q2").innerHTML = "Javascript is case sensitive?";
+//       document.getElementById("q2False").innerHTML = "False";
+//         if ("False"){
+//           // timeLeft--;
+//         }
+//       document.getElementById("q2True").innerHTML = "True";
+//         if ("True"){
+// //yay if correct; oh no if incorrect
+// //if incorrect subtract time from timer
+//         }
 
- //3rd question to pop up and list possible anwsers
-    document.getElementById("q3").innerHTML = "Javascript is easy?";
-      document.getElementById("q3False").innerHTML = "False";
-        if ("False"){
-          // timeLeft--;
-        }
-      document.getElementById("q3True").innerHTML = "True";
-        if ("True"){
-//yay if correct; oh no if incorrect
-//if incorrect subtract time from timer
-        }
-      
+//  //3rd question to pop up and list possible anwsers
+//     document.getElementById("q3").innerHTML = "Javascript is easy?";
+//       document.getElementById("q3False").innerHTML = "False";
+//         if ("False"){
+//           // timeLeft--;
+//         }
+//       document.getElementById("q3True").innerHTML = "True";
+//         if ("True"){
+// //yay if correct; oh no if incorrect
+// //if incorrect subtract time from timer
+//         }
 
+//       q1MultiChoice1.addEventListener("click", function(){
+//       });
 
-      q1MultiChoice1.addEventListener("click", function(){ 
-      });
-    
-  // WHEN DONE
-    // calculate score
-    // alert("Your score is " + score + "/" + quizQuestions.length);
-    // save initials
-    // save score  
-    
-  }, 1000);
-};
+// WHEN DONE
+// calculate score
+// alert("Your score is " + score + "/" + quizQuestions.length);
+// save initials
+// save score
 
-
-
-
-
+//   }, 1000);
+// };
 
 //   var questions = [{
 //     id: 0,
@@ -137,24 +163,23 @@ function startQuiz() {
 // localStorage.setItem("score", score);
 // renderLastScore();
 
-
-//   q1MultiChoice2.addEventListener("click", function(){ 
+//   q1MultiChoice2.addEventListener("click", function(){
 //     if (q1MultiChoice2){
 //       alert("Great job!");
 //     }else {
 //       alert("NOPE!");
 //     }
 //   });
-  
-//   q2TrueFalse.addEventListener("click", function(){ 
+
+//   q2TrueFalse.addEventListener("click", function(){
 //     if (True){
 //       alert("Great job!");
 //     }else {
 //       alert("NOPE!");
 //     }
 //   });
-  
-//   q3TrueFalse.addEventListener("click", function(){ 
+
+//   q3TrueFalse.addEventListener("click", function(){
 //     if (False){
 //       alert("Great job!");
 //     }else {
@@ -172,12 +197,7 @@ function startQuiz() {
 // function displayMessage() {
 //   var wordCount = 0;
 
-
-
-
-
-
-// q1MultiChoice2.addEventListener("click", function(){ 
+// q1MultiChoice2.addEventListener("click", function(){
 //   if (q1MultiChoice2){
 //     alert("Great job!");
 //   }else {
@@ -185,7 +205,7 @@ function startQuiz() {
 //   }
 // });
 
-// q2TrueFalse.addEventListener("click", function(){ 
+// q2TrueFalse.addEventListener("click", function(){
 //   if (True){
 //     alert("Great job!");
 //   }else {
@@ -193,11 +213,10 @@ function startQuiz() {
 //   }
 // });
 
-// q3TrueFalse.addEventListener("click", function(){ 
+// q3TrueFalse.addEventListener("click", function(){
 //   if (False){
 //     alert("Great job!");
 //   }else {
 //     alert("NOPE!");
 //   }
 // });
-
