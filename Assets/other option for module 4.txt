@@ -1,0 +1,32 @@
+var questions = [
+  {q1: "What is this an example of: 'X', 'Y', 'Z' ?",
+    choices: ["Numbers", "Array", "Function"],
+    answer: "Array",
+  
+  q2: "Is Javascript case sensitive?",
+    choices: ["True", "False"],
+    answer: "True",
+
+  q3: "Is Javascript easy?",
+  choices: ["True", "False"],
+  answer: "False",
+  }
+];
+
+function startQuiz(){
+  console.log("in game");
+  startTimer();
+  showQuestions();
+}
+
+function startTimer(){
+  console.log("in timer");
+}
+
+function showQuestions(){
+  console.log("in showquestions");
+}
+
+function endGame(){
+  console.log("endgame");
+}

@@ -6,6 +6,7 @@ var timerEl = document.querySelector(".timer-count");
 var score = document.querySelector("#score");
 var quizBtn = document.querySelector("#startBtn");
 var initials = "";
+var q1MultiChoice1 = document.querySelector("#q1MultiChoice1");
 
 var q1MultiChoice = 'What is this an example of: "X", "Y", "X" ?';
 var q2TrueFalse = 'Javascript is case sensitive?';
@@ -22,7 +23,7 @@ quizBtn.addEventListener("click", function(event){
 });
 
 function startQuiz() {
-  var timeLeft = 15;
+  var timeLeft = 10;
 
   var timeInterval = setInterval(function () {
     if (timeLeft > 1) {
@@ -34,32 +35,39 @@ function startQuiz() {
       // displayMessage();
     }
 
-    document.getElementById("q1").innerHTML = "What is this an example of: 'X', 'Y', 'X'?";
+    // need this 1st question to pop up: id q1MultiChoice
+    // function q1MultiChoice(event){
+    //   for(var i = 0; i < arguments.length; i++)
+      document.getElementById("q1").innerHTML = "What is this an example of: 'X', 'Y', 'X'?";
+
       document.getElementById("q1MultiChoice1").innerHTML = "Numbers";
         if ("Numbers"){
-          timeLeft--;
+          // timeLeft--;
         }
       document.getElementById("q1MultiChoice2").innerHTML = "Array";
       if ("Array"){
       }
       document.getElementById("q1MultiChoice3").innerHTML = "Function";
         if ("Function"){
-          timeLeft--;
+          // timeLeft--;
         }
+  
 
     document.getElementById("q2").innerHTML = "Javascript is case sensitive?";
       document.getElementById("q2False").innerHTML = "False";
         if ("False"){
-          timeLeft--;
+          // timeLeft--;
         }
       document.getElementById("q2True").innerHTML = "True";
         if ("True"){
         }
 
+
+ 
     document.getElementById("q3").innerHTML = "Javascript is easy?";
       document.getElementById("q3False").innerHTML = "False";
         if ("False"){
-          timeLeft--;
+          // timeLeft--;
         }
       document.getElementById("q3True").innerHTML = "True";
         if ("True"){
@@ -69,9 +77,9 @@ function startQuiz() {
 
       q1MultiChoice1.addEventListener("click", function(){ 
       });
-
+    
   
-
+    
   }, 1000);
 };
 
