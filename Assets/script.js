@@ -16,7 +16,6 @@ var questionBox = document.querySelector("#questionbox");
 var questions = [
   {
     question: 'What is this an example of: ["X", "Y", "X"] ?',
-
     //properties of the question
     choices: ["Number", "Array", "Function"],
     correctAnswer: "Array",
@@ -26,6 +25,12 @@ var questions = [
     question: "Is Javascript easy?",
     choices: ["True", "False"],
     correctAnswer: "False",
+  },
+
+  {
+    question: "Is Javascript case sensitive?",
+    choices: ["True", "False"],
+    correctAnswer: "True",
   },
 ];
 console.log(questions);
@@ -70,8 +75,8 @@ function populateQuestion (){
     button.textContent=choice;
     questionBox.append(button);
     console.log(choice);
-    button.addEventListener("click", function(){
-      choice===questions.correctAnswer; 
+    button.addEventListener("click", function(event)
+    {
       // populateQuestion();
       // console.log(correctAnswer);
     })
