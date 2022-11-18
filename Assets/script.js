@@ -75,14 +75,30 @@ function populateQuestion (){
     button.textContent=choice;
     questionBox.append(button);
     console.log(choice);
-    button.addEventListener("click", function(event)
-    {
+    button.addEventListener("click", function(event){
+      event.preventDefault();
+      var userChoice = event.target.id;
+      if (choice === correctAnswer){
+        score++;
+        intro.textContent = "Correct, Yay!";
+      } else {
+        intro.textContent = "Nope!";
+      }  
       // populateQuestion();
-      // console.log(correctAnswer);
+      console.log(correctAnswer);
     })
   };
   // document.createElement("button");
   console.log(choices);
+}
+
+function gameOver(){
+  var gameOver = localStorage.getItem(initials, score);
+  return initials + score;
+}
+
+function saveInitialsAndScores(score) {
+  localStorage.setItem('initials ', + 'scores', JSON.stringify(scores));
 }
 
 // }
